@@ -1,0 +1,545 @@
+/* Custom CSS Variables (Instagram-like gradient colors) */
+:root {
+    --gradient-start: #feda75; /* Yellow/Orange */
+    --gradient-mid: #fa7e1e;   /* Orange */
+    --gradient-end: #d62976;   /* Pink */
+    --gradient-end-deep: #962fbf; /* Purple */
+    --gradient-text-hero: #ffffff; /* White text for hero section */
+
+    --primary-text: #333;
+    --secondary-text: #666;
+    --background-light: #ffffff;
+    --background-grey: #f8f9fa; /* Very light grey */
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+/* Basic Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    line-height: 1.6;
+    color: var(--primary-text);
+    background-color: var(--background-grey);
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gradient-end); /* Link color inspired by gradient */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+    color: var(--gradient-end-deep);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Slightly different for headings */
+    color: var(--primary-text);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+/* Primary Button Style */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 8px; /* More rounded corners */
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn.primary-btn {
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    color: var(--gradient-text-hero);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn.secondary-btn {
+    background-color: transparent;
+    color: var(--gradient-text-hero);
+    border: 2px solid var(--gradient-text-hero);
+    box-shadow: none;
+}
+
+.btn.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* --- Header Section --- */
+.main-header {
+    background-color: var(--background-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-light); /* Softer shadow */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    font-size: 2em;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--gradient-end), var(--gradient-mid)); /* Gradient logo */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+    margin: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.main-nav ul li {
+    margin-left: 35px;
+}
+
+.main-nav ul li a {
+    color: var(--primary-text);
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-mid), var(--gradient-end));
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle { /* For mobile navigation */
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 2.2em;
+    cursor: pointer;
+    color: var(--gradient-end); /* Color inspired by gradient */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end-deep)); /* Instagram-like gradient */
+    color: var(--gradient-text-hero);
+    text-align: center;
+    padding: 100px 20px 80px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden; /* For any background animations */
+}
+
+.hero-section h1 {
+    font-size: 3.8em; /* Larger, more impactful */
+    margin-bottom: 25px;
+    color: var(--gradient-text-hero);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+/* --- Features Section --- */
+.features-section {
+    background-color: var(--background-light);
+    padding: 70px 0;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    color: var(--primary-text);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--background-grey);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-light); /* Prominent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Text alignment within card */
+    opacity: 0; /* Hidden by default for JS animation */
+    transform: translateY(20px); /* Slide up for JS animation */
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Lift and slightly scale on hover */
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.feature-card h3 {
+    font-size: 1.8em;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 1em;
+    color: var(--secondary-text);
+}
+
+/* --- Blog Posts Placeholder Section --- */
+.blog-posts-placeholder {
+    padding: 70px 0;
+    text-align: center;
+    background-color: var(--background-light);
+    margin-bottom: 60px;
+}
+
+.blog-posts-placeholder h2 {
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+.blog-posts-placeholder p {
+    font-size: 1.2em;
+    color: var(--secondary-text);
+    margin-bottom: 50px;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px; /* More space for a cleaner look */
+}
+
+.blog-post-card.placeholder-card {
+    background-color: var(--background-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px var(--shadow-light);
+    padding: 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* Hidden by default for JS animation */
+    transform: translateY(20px); /* Slide up for JS animation */
+}
+
+.blog-post-card.placeholder-card:hover {
+    transform: translateY(-8px) scale(1.01); /* Lift and slightly scale */
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.placeholder-card .placeholder-image {
+    width: 100%;
+    height: 220px; /* Larger image area */
+    background: linear-gradient(45deg, #eee, #ddd); /* Light gradient for placeholder */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.placeholder-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-text);
+    margin-bottom: 12px;
+}
+
+.placeholder-card p {
+    font-size: 1em;
+    color: var(--secondary-text);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.placeholder-card a {
+    align-self: flex-start;
+    font-weight: 600;
+    color: var(--gradient-end);
+}
+
+.view-all-posts {
+    margin-top: 60px;
+}
+
+/* --- Call to Action / Newsletter Section --- */
+.cta-newsletter-section {
+    background: linear-gradient(45deg, var(--gradient-end-deep), var(--gradient-end), var(--gradient-mid)); /* Darker gradient */
+    color: var(--gradient-text-hero);
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: 0; /* Last section before footer */
+}
+
+.cta-newsletter-section h2 {
+    font-size: 3.2em;
+    color: var(--gradient-text-hero);
+    margin-bottom: 25px;
+}
+
+.cta-newsletter-section p {
+    font-size: 1.3em;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Stronger shadow for pop-out effect */
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    border: none;
+    padding: 18px 25px; /* Larger padding */
+    font-size: 1.15em;
+    outline: none;
+    background: transparent;
+    color: var(--primary-text);
+}
+
+.newsletter-form input::placeholder {
+    color: #888;
+}
+
+.newsletter-form .btn {
+    padding: 18px 35px;
+    font-size: 1.15em;
+    border-radius: 0 10px 10px 0; /* Only right corners rounded */
+}
+
+/* --- Footer Section --- */
+.main-footer {
+    background-color: #1a1a1a; /* Very dark, sleek footer */
+    color: var(--background-grey);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav ul li {
+    margin: 0 20px;
+}
+
+.footer-nav ul li a {
+    color: var(--background-grey);
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--gradient-mid);
+    opacity: 1;
+}
+
+.social-links a {
+    color: var(--background-grey);
+    font-size: 1.3em;
+    margin: 0 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--gradient-start);
+    transform: scale(1.2);
+}
+
+.copyright {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        background-color: var(--background-light);
+        box-shadow: 0 5px 10px var(--shadow-light);
+        position: absolute; /* To overlay content */
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        z-index: 1000;
+    }
+    .main-nav.active {
+        display: block;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .main-nav ul li {
+        margin: 0;
+    }
+    .main-nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    .hero-section p {
+        font-size: 1.2em;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .features-section h2, .blog-posts-placeholder h2, .cta-newsletter-section h2 {
+        font-size: 2.5em;
+    }
+
+    .features-grid, .post-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .newsletter-form input {
+        border-radius: 8px 8px 0 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .newsletter-form .btn {
+        border-radius: 0 0 8px 8px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .footer-nav ul li {
+        margin: 5px 0;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 80px 15px 60px;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+    .features-section h2, .blog-posts-placeholder h2, .cta-newsletter-section h2 {
+        font-size: 2.2em;
+    }
+}
