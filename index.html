@@ -7,21 +7,47 @@
     <link rel="stylesheet" href="my.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
 <body>
 
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <a href="my.html">AI Tools Hub</a>
+                <a href="index.html">AI Tools Hub</a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Tool Reviews</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                    <li><a href="#">Resources</a></li>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Free Tools ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#">Image Generators (Free)</a>
+                            <a href="#">Text-to-Video (Free)</a>
+                            <a href="#">AI Writing (Free)</a>
+                            <a href="#">Voice Cloning (Free)</a>
+                            </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Trial Tools ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#">Advanced AI Art (Trial)</a>
+                            <a href="#">Code Assistants (Trial)</a>
+                            <a href="#">Video Editing AI (Trial)</a>
+                            </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Paid Tools ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#">Professional AI Suites</a>
+                            <a href="#">Enterprise AI Solutions</a>
+                            <a href="#">Custom AI Development</a>
+                            </div>
+                    </li>
+
                     <li><a href="#">About Us</a></li>
                 </ul>
             </nav>
@@ -77,27 +103,34 @@
             <h2>Latest Insights from the AI Frontier</h2>
             <p>Stay updated with our newest articles, expert analyses, and cutting-edge tool breakdowns.</p>
             <div class="post-grid">
-                <article class="blog-post-card placeholder-card animate-on-scroll">
-                    <div class="placeholder-image"></div>
-                    <h3>[Upcoming Blog Post 1 Title]</h3>
-                    <p>Dive into the future of content generation and AI-powered marketing strategies.</p>
-                    <a href="file:///C:/Users/skill/OneDrive/Pictures/Desktop/My%20Project/ai.html">Read More</a>
+                <article class="blog-post-card animate-on-scroll">
+                    <div class="placeholder-image">
+                        <img src="https://via.placeholder.com/400x250/6A5ACD/FFFFFF?text=Gemini+AI+Insights" alt="Conceptual image of AI interaction" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+                    </div>
+                    <h3>An AI's Journey: Insights from Gemini</h3>
+                    <p>Discover my unique perspective on the evolving world of Artificial Intelligence and its future in digital interaction.</p>
+                    <a href="an-ais-journey-gemini.html">Read More</a>
                 </article>
-                 <article class="blog-post-card placeholder-card animate-on-scroll">
-                    <div class="placeholder-image"></div>
+
+                <article class="blog-post-card placeholder-card animate-on-scroll">
+                    <div class="placeholder-image">
+                        <img src="https://via.placeholder.com/400x250/007bff/FFFFFF?text=AI+Data+Analysis" alt="AI analyzing data" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+                    </div>
                     <h3>[Upcoming Blog Post 2 Title]</h3>
                     <p>Discover how AI is revolutionizing data analysis for business intelligence.</p>
                     <a href="#">Read More</a>
                 </article>
-                 <article class="blog-post-card placeholder-card animate-on-scroll">
-                    <div class="placeholder-image"></div>
+                <article class="blog-post-card placeholder-card animate-on-scroll">
+                    <div class="placeholder-image">
+                        <img src="https://via.placeholder.com/400x250/28a745/FFFFFF?text=Ethical+AI+Models" alt="Ethical AI concepts" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+                    </div>
                     <h3>[Upcoming Blog Post 3 Title]</h3>
                     <p>Explore the ethical considerations and impact of advanced AI models.</p>
                     <a href="#">Read More</a>
                 </article>
             </div>
             <div class="view-all-posts animate-on-scroll">
-                <a href="#" class="btn primary-btn">View All Posts</a>
+                <a href="#" class="btn primary-btn view-all-btn">View All Posts</a>
             </div>
         </div>
     </section>
